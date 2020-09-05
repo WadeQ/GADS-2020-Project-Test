@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.wadektech.aadpracticeproject2020.ui.views.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/learningLeadersFragment"
+        android:name="com.wadektech.aadpracticeproject2020.ui.views.LearningLeadersFragment"
+        android:label="fragment_learning_leaders"
+        tools:layout="@layout/fragment_learning_leaders" >
+        <action
+            android:id="@+id/action_learningLeadersFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/skillIQLeadersFragment"
+        android:name="com.wadektech.aadpracticeproject2020.ui.views.SkillIQLeadersFragment"
+        android:label="fragment_skill_i_q_leaders"
+        tools:layout="@layout/fragment_skill_i_q_leaders" >
+        <action
+            android:id="@+id/action_skillIQLeadersFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/submitFragment"
+        android:name="com.wadektech.aadpracticeproject2020.ui.views.SubmitFragment"
+        android:label="fragment_submit"
+        tools:layout="@layout/fragment_submit" >
+        <action
+            android:id="@+id/action_submitFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/dialogFragment"
+        android:name="com.wadektech.aadpracticeproject2020.DialogFragment"
+        android:label="fragment_dialog"
+        tools:layout="@layout/fragment_dialog" >
+        <action
+            android:id="@+id/action_dialogFragment_to_submitFragment"
+            app:destination="@id/submitFragment" />
+    </fragment>
+</navigation>
