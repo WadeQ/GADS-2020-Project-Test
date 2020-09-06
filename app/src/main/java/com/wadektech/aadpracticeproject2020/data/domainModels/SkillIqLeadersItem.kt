@@ -1,4 +1,4 @@
-package com.wadektech.aadpracticeproject2020.data
+package com.wadektech.aadpracticeproject2020.data.domainModels
 
 
 import androidx.room.Entity

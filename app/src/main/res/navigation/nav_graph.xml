@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/dialogFragment"
-        android:name="com.wadektech.aadpracticeproject2020.DialogFragment"
+        android:name="com.wadektech.aadpracticeproject2020.ui.views.DialogFragment"
         android:label="fragment_dialog"
         tools:layout="@layout/fragment_dialog" >
         <action

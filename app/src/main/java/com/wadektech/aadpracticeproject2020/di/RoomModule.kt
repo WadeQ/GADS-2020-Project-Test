@@ -30,13 +30,13 @@ object RoomModule {
 
     @Singleton
     @Provides
-    fun provideLearningDao(learningRoomDatabase: AppRoomDatabase) : LearningLeadersDao{
-        return learningRoomDatabase.learningLeadersDao()
+    fun provideLearningDao(appRoomDatabase: AppRoomDatabase) : LearningLeadersDao{
+        return appRoomDatabase.learningLeadersDao()
     }
 
     @Singleton
     @Provides
-    fun provideSkillIqDao(learningRoomDatabase: AppRoomDatabase) : SkillIqLeadersDao{
-        return learningRoomDatabase.skillIqLeadersDao()
+    fun provideSkillIqDao(appRoomDatabase: AppRoomDatabase) : SkillIqLeadersDao{
+        return appRoomDatabase.skillIqLeadersDao()
     }
 }
