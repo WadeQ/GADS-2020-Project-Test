@@ -52,4 +52,7 @@ constructor(
         return _learningLeadersPagedList
     }
 
+    override fun onCleared() {
+        super.onCleared()
+    }
 }
