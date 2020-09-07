@@ -17,7 +17,7 @@ class LearningLeadersAdapter :
         }
 
         override fun areContentsTheSame(oldItem: LearningLeaders, newItem: LearningLeaders): Boolean {
-           return oldItem.name == newItem.name
+           return oldItem.id == newItem.id
         }
 
     }

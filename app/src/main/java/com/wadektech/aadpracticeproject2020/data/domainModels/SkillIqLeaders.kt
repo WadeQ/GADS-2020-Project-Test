@@ -9,6 +9,8 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 @Entity(tableName = "skill_iq")
 data class SkillIqLeaders(
+    @PrimaryKey(autoGenerate = true)
+    val id : Int = 0,
     @Json(name = "badgeUrl")
     val badgeUrl: String,
     @Json(name = "country")
@@ -18,4 +20,6 @@ data class SkillIqLeaders(
     val name: String,
     @Json(name = "score")
     val score: Int
-)
+){
+
+}

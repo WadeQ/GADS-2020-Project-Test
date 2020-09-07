@@ -11,6 +11,7 @@ import com.wadektech.aadpracticeproject2020.data.domainModels.LearningLeaders
 import com.wadektech.aadpracticeproject2020.data.domainModels.SkillIqLeaders
 import com.wadektech.aadpracticeproject2020.data.repository.AppRepository
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class AppViewModel
 @ViewModelInject
@@ -29,10 +30,10 @@ constructor(
         val learners : DataSource.Factory<Int, LearningLeaders> = appRepository.getAllLearningLeadersFromLocal()
         val skills : DataSource.Factory<Int, SkillIqLeaders> = appRepository.getAllSkillIqLeadersFromLocal()
 
-        val livePagedListBuilderForLearners : LivePagedListBuilder<Int, LearningLeaders> = LivePagedListBuilder(learners, 25)
+        val livePagedListBuilderForLearners : LivePagedListBuilder<Int, LearningLeaders> = LivePagedListBuilder(learners, 50)
         _learningLeadersPagedList = livePagedListBuilderForLearners.build()
 
-        val livePagedListBuilderSkillsByIQ : LivePagedListBuilder<Int, SkillIqLeaders> = LivePagedListBuilder(skills,25)
+        val livePagedListBuilderSkillsByIQ : LivePagedListBuilder<Int, SkillIqLeaders> = LivePagedListBuilder(skills,50)
         _skillIQLeadersPagedList = livePagedListBuilderSkillsByIQ.build()
     }
 
