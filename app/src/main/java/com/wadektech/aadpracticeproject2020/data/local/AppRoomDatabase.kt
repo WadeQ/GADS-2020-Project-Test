@@ -6,7 +6,7 @@ import com.wadektech.aadpracticeproject2020.data.domainModels.LearningLeaders
 import com.wadektech.aadpracticeproject2020.data.domainModels.SkillIqLeaders
 
 
-@Database(entities = [SkillIqLeaders::class, LearningLeaders::class], version = 2, exportSchema = false)
+@Database(entities = [SkillIqLeaders::class, LearningLeaders::class], version = 6, exportSchema = false)
 abstract class AppRoomDatabase : RoomDatabase(){
     abstract fun learningLeadersDao() : LearningLeadersDao
     abstract fun skillIqLeadersDao() : SkillIqLeadersDao
