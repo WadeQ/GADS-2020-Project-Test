@@ -8,7 +8,7 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 @Entity(tableName = "learning_leaders")
-data class LearningLeadersItem(
+data class LearningLeaders(
     @PrimaryKey(autoGenerate = true)
     val id : Int,
     @Json(name = "badgeUrl")

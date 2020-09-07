@@ -7,8 +7,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.DataSource
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.wadektech.aadpracticeproject2020.data.domainModels.LearningLeadersItem
-import com.wadektech.aadpracticeproject2020.data.domainModels.SkillIqLeadersItem
+import com.wadektech.aadpracticeproject2020.data.domainModels.LearningLeaders
+import com.wadektech.aadpracticeproject2020.data.domainModels.SkillIqLeaders
 import com.wadektech.aadpracticeproject2020.data.repository.AppRepository
 import kotlinx.coroutines.launch
 
@@ -19,20 +19,20 @@ constructor(
 ) : ViewModel()
 {
 
-    private var _learningLeadersPagedList : LiveData<PagedList<LearningLeadersItem>>
-    private var _skillIQLeadersPagedList : LiveData<PagedList<SkillIqLeadersItem>>
+    private var _learningLeadersPagedList : LiveData<PagedList<LearningLeaders>>
+    private var _skillIQLeadersPagedList : LiveData<PagedList<SkillIqLeaders>>
 
     init {
         getAllSkilledLeadersByIq()
         getAllLearningLeaders()
 
-        val learners : DataSource.Factory<Int, LearningLeadersItem> = appRepository.getAllLearningLeadersFromLocal()
-        val skills : DataSource.Factory<Int, SkillIqLeadersItem> = appRepository.getAllSkillIqLeadersFromLocal()
+        val learners : DataSource.Factory<Int, LearningLeaders> = appRepository.getAllLearningLeadersFromLocal()
+        val skills : DataSource.Factory<Int, SkillIqLeaders> = appRepository.getAllSkillIqLeadersFromLocal()
 
-        val livePagedListBuilderForLearners : LivePagedListBuilder<Int, LearningLeadersItem> = LivePagedListBuilder(learners, 25)
+        val livePagedListBuilderForLearners : LivePagedListBuilder<Int, LearningLeaders> = LivePagedListBuilder(learners, 25)
         _learningLeadersPagedList = livePagedListBuilderForLearners.build()
 
-        val livePagedListBuilderSkillsByIQ : LivePagedListBuilder<Int, SkillIqLeadersItem> = LivePagedListBuilder(skills,25)
+        val livePagedListBuilderSkillsByIQ : LivePagedListBuilder<Int, SkillIqLeaders> = LivePagedListBuilder(skills,25)
         _skillIQLeadersPagedList = livePagedListBuilderSkillsByIQ.build()
     }
 
@@ -44,11 +44,11 @@ constructor(
         appRepository.getAllLearningLeadersFromRemote()
     }
 
-    fun getAllSkilledLeadersByIQ() : LiveData<PagedList<SkillIqLeadersItem>>{
+    fun getAllSkilledLeadersByIQ() : LiveData<PagedList<SkillIqLeaders>>{
         return _skillIQLeadersPagedList
     }
 
-    fun getAllLearningLeadersByHours() : LiveData<PagedList<LearningLeadersItem>>{
+    fun getAllLearningLeadersByHours() : LiveData<PagedList<LearningLeaders>>{
         return _learningLeadersPagedList
     }
 

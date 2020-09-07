@@ -2,11 +2,11 @@ package com.wadektech.aadpracticeproject2020.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.wadektech.aadpracticeproject2020.data.domainModels.LearningLeadersItem
-import com.wadektech.aadpracticeproject2020.data.domainModels.SkillIqLeadersItem
+import com.wadektech.aadpracticeproject2020.data.domainModels.LearningLeaders
+import com.wadektech.aadpracticeproject2020.data.domainModels.SkillIqLeaders
 
 
-@Database(entities = [SkillIqLeadersItem::class, LearningLeadersItem::class], version = 1, exportSchema = false)
+@Database(entities = [SkillIqLeaders::class, LearningLeaders::class], version = 1, exportSchema = false)
 abstract class AppRoomDatabase : RoomDatabase(){
     abstract fun learningLeadersDao() : LearningLeadersDao
     abstract fun skillIqLeadersDao() : SkillIqLeadersDao

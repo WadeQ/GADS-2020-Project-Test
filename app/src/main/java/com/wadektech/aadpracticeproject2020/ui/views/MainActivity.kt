@@ -15,8 +15,6 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-  private var skillIQLeadersFragment : SkillIQLeadersFragment ?= null
-  private var learningLeadersFragment : LearningLeadersFragment ?= null
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -25,11 +23,9 @@ class MainActivity : AppCompatActivity() {
     val toolbar : androidx.appcompat.widget.Toolbar= findViewById(R.id.toolbar)
     setSupportActionBar(toolbar)
 
-    skillIQLeadersFragment = SkillIQLeadersFragment()
-    learningLeadersFragment = LearningLeadersFragment()
-
+    val pagerAdapter = ViewPagerAdapter(supportFragmentManager)
+    view_pager.adapter = pagerAdapter
     tab_layout.setupWithViewPager(view_pager)
-    view_pager.adapter = ViewPagerAdapter(supportFragmentManager)
 
   }
 }

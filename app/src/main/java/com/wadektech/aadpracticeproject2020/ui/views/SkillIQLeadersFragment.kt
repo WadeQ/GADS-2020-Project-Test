@@ -6,12 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.wadektech.aadpracticeproject2020.R
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 /**
  * A simple [Fragment] subclass.
  * Use the [SkillIQLeadersFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+@ExperimentalCoroutinesApi
+@AndroidEntryPoint
 class SkillIQLeadersFragment : Fragment() {
 
     override fun onCreateView(
