@@ -16,12 +16,12 @@
         tools:ignore="ExtraText">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_posts"
+            android:id="@+id/rv_learners"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:clipToPadding="false"
             android:padding="8dp"
-            app:postsBindingAdapter="@{viewModel.allLearningLeadersByHours}"
+            app:bindLearnersAdapter="@{viewModel.allLearningLeadersByHours}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

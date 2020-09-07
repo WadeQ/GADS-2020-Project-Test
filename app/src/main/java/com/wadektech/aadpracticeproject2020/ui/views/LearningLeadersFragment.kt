@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.wadektech.aadpracticeproject2020.R
+import com.wadektech.aadpracticeproject2020.databinding.FragmentLearningLeadersBinding
+import com.wadektech.aadpracticeproject2020.ui.adapters.LearningLeadersAdapter
+import com.wadektech.aadpracticeproject2020.ui.viewmodels.AppViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
@@ -23,6 +27,12 @@ class LearningLeadersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_learning_leaders, container, false)
+        val binding = FragmentLearningLeadersBinding.inflate(inflater)
+
+        val appViewModel : AppViewModel by viewModels()
+        binding.lifecycleOwner = this
+        binding.viewModel = appViewModel
+        binding.rvLearners.adapter = LearningLeadersAdapter()
+        return binding.root
     }
 }

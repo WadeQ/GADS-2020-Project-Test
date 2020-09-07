@@ -9,12 +9,11 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 @Entity(tableName = "skill_iq")
 data class SkillIqLeaders(
-    @PrimaryKey(autoGenerate = true)
-    val id : Int,
     @Json(name = "badgeUrl")
     val badgeUrl: String,
     @Json(name = "country")
     val country: String,
+    @PrimaryKey(autoGenerate = false)
     @Json(name = "name")
     val name: String,
     @Json(name = "score")

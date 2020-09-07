@@ -27,6 +27,7 @@ class AppRepository(
             val skillIQLeaders = apiService.getAllSkillIqLeadersAsync()
             try {
                 val skillsList = skillIQLeaders.await()
+                Timber.d("getAllSkillIqLeadersFromRemote: success skills list size ${skillsList.size}")
                 skillIqLeadersDao.saveAllSkillIqLeaders(skillsList)
             } catch (t : Throwable){
                 Timber.d("getAllSkillIqLeadersFromRemote: Failure due to ${t.message}")
@@ -39,6 +40,7 @@ class AppRepository(
             val learningLeaders = apiService.getAllLearningLeadersAsync()
             try {
                 val learningList = learningLeaders.await()
+                Timber.d("getAllSkillIqLeadersFromRemote: success learning list size ${learningList.size}")
                 leadersDao.saveAllLearningLeaders(learningList)
             } catch (t : Throwable){
                 Timber.d("getAllLearningLeadersFromRemote: failure due to ${t.message}")
