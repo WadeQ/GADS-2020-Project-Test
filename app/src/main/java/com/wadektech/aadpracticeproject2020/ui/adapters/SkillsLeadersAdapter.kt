@@ -17,7 +17,7 @@ class SkillsLeadersAdapter :
         }
 
         override fun areContentsTheSame(oldItem: SkillIqLeaders, newItem: SkillIqLeaders): Boolean {
-            return oldItem.name == newItem.name
+            return oldItem.score == newItem.score
         }
     }
 

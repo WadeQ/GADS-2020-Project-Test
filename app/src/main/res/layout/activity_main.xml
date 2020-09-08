@@ -78,9 +78,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/skill_iq_leaders">
             </com.google.android.material.tabs.TabItem>
-
         </com.google.android.material.tabs.TabLayout>
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager.widget.ViewPager
@@ -89,12 +87,5 @@
         android:layout_height="match_parent">
 
     </androidx.viewpager.widget.ViewPager>
-
-
-    <FrameLayout
-        android:id="@+id/submit_fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,5 +1,6 @@
 package com.wadektech.aadpracticeproject2020.ui.views
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -27,10 +28,8 @@ class MainActivity : AppCompatActivity() {
     tab_layout.setupWithViewPager(view_pager)
 
     btn_submit.setOnClickListener {
-      val fragment: Fragment = SubmitFragment()
-      val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-      transaction.replace(R.id.submit_fragment_container, fragment)
-      transaction.commit()
+      val intent = Intent(this, SubmitActivity::class.java)
+      startActivity(intent)
     }
   }
 }
