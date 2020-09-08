@@ -17,9 +17,8 @@ class SkillsLeadersAdapter :
         }
 
         override fun areContentsTheSame(oldItem: SkillIqLeaders, newItem: SkillIqLeaders): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem.name == newItem.name
         }
-
     }
 
     class SkillsViewHolder private constructor(private val binding: SkillListItemsBinding) :

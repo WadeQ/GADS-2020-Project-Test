@@ -17,9 +17,8 @@ class LearningLeadersAdapter :
         }
 
         override fun areContentsTheSame(oldItem: LearningLeaders, newItem: LearningLeaders): Boolean {
-           return oldItem.id == newItem.id
+           return oldItem.name == newItem.name
         }
-
     }
 
     class LearnersViewHolder private constructor(private val binding: LearningLeadersListItemsBinding) :

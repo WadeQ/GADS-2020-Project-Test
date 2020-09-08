@@ -10,7 +10,7 @@ import com.wadektech.aadpracticeproject2020.data.domainModels.LearningLeaders
 @Dao
 interface LearningLeadersDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun saveAllLearningLeaders(learningLeaders : List<LearningLeaders>)
 
     @Query("SELECT * FROM learning_leaders ORDER BY hours DESC")
