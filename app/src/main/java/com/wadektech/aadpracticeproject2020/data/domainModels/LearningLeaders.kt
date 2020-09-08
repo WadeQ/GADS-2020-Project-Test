@@ -10,7 +10,7 @@ import com.squareup.moshi.JsonClass
 @Entity(tableName = "learning_leaders")
 data class LearningLeaders(
     @PrimaryKey(autoGenerate = true)
-    val id : Int = 0,
+    val id : Int,
     @Json(name = "badgeUrl")
     val badgeUrl: String,
     @Json(name = "country")
@@ -19,6 +19,4 @@ data class LearningLeaders(
     val hours: Int,
     @Json(name = "name")
     val name: String
-){
-
-}
+)
