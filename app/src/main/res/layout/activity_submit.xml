@@ -85,8 +85,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
+        android:autofillHints=""
         android:background="@drawable/list_bg"
         android:ems="10"
         android:hint="@string/email_address"
@@ -94,18 +95,18 @@
         android:padding="10dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_first_name"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/et_first_name" />
 
     <EditText
         android:id="@+id/et_project_link"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
+        android:autofillHints=""
         android:background="@drawable/list_bg"
         android:ems="10"
         android:hint="@string/github_link"
@@ -115,8 +116,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
     <Button
         android:id="@+id/btn_submit_project"

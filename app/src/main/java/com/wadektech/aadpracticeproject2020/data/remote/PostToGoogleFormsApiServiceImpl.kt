@@ -1,18 +1,16 @@
 package com.wadektech.aadpracticeproject2020.data.remote
 
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 
 
-private val moshi = Moshi.Builder()
-    .add(KotlinJsonAdapterFactory())
-    .build()
+private val gson = GsonBuilder()
+    .setLenient()
+    .create()
 
 private val retrofit = Retrofit.Builder()
-    .addConverterFactory(MoshiConverterFactory.create(moshi))
+    .addConverterFactory(GsonConverterFactory.create(gson))
     .baseUrl("https://docs.google.com/forms/d/e/")
     .build()
 
